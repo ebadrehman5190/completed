@@ -10,8 +10,8 @@ session_start();
 			$user = $_POST['user'];
 			$pwd = $_POST['password'];
 
-				$conn = mysqli_connect('localhost','root','','test');
-				mysqli_select_db($conn,"test");
+				$conn = mysqli_connect('localhost','root','mysql','mysql');
+				mysqli_select_db($conn,"mysql");
 
 											
 					$login=("SELECT * FROM selected_members WHERE User='$user'AND Password='$pwd' ");

@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://localhost/php/newtask/addbutton_jquery.js"></script>
-    <script src="http://localhost/php/newtask/per_head.js"></script>
-    <script src="http://localhost/php/newtask/entry_validation.js"></script>
+    <script src="http://localhost/task/completed/addbutton_jquery.js"></script>
+    <script src="http://localhost/task/completed/per_head.js"></script>
+    <script src="http://localhost/task/completed/entry_validation.js"></script>
 </head>        
 <body>         
 
-<!---------------------------------- Header bar --------------------------------->                
+<!---------------------------------- Header bar -------------------------------->                
 <div class="menu">
     <div class="header-bar-color">
         <div class="header-bar">
@@ -37,7 +37,6 @@
 
 <?php include('entry2.php'); //php validation ?>
 <?php
-$dateErr=$memberErr=$mytextErr=$paidErr=$amountErr="";
 $date=$member=$mytext=$paid=$amount="";
 ?> 
            
@@ -48,18 +47,18 @@ $date=$member=$mytext=$paid=$amount="";
         
         Date:
         <div class="align">
-            <input type="date" name="date" id="date">
+            <input type="date" name="date" id="date" style="width:173px;">
             </div>
             <span id="var_date" style="color:red;"><?php echo $dateErr;?></span>
         <br>
 
         Members:
         <div class="align">
-                    <select multiple="multiple" name="member[]" id="mSelect" size="3" style="width:150px;">
+                    <select multiple="multiple" name="member[]" id="mSelect" size="3" style="width:173px;">
                             <?php
                         
-                                $conn = mysqli_connect('localhost','root','','test');
-                                mysqli_select_db($conn,"test");
+                                $conn = mysqli_connect('localhost','root','mysql','mysql');
+                                mysqli_select_db($conn,"mysql");
 
                                 $edit = "SELECT User FROM selected_members ";				
                                     
@@ -92,11 +91,11 @@ $date=$member=$mytext=$paid=$amount="";
 
         Paid money:
         <div class="align">
-            <select name="paid" id="paid" style="width:150px;">
+            <select name="paid" id="paid" style="width:173px;">
                 <option></option>
                 <?php
-                        $conn = mysqli_connect('localhost','root','','test');
-                        mysqli_select_db($conn,"test");
+                        $conn = mysqli_connect('localhost','root','mysql','mysql');
+                        mysqli_select_db($conn,"mysql");
 
                         $edit = "SELECT User FROM selected_members ";				
                                 
@@ -127,6 +126,7 @@ $date=$member=$mytext=$paid=$amount="";
     </fieldset>      
                       
 <?php include('entry1.php'); // sql query to insert data ?>
+<br>
 
 </form>
 </div>

@@ -9,7 +9,7 @@ include('session1.php');
     <link rel="stylesheet" href="search_by_date.css">
 </head>
 <body>
-<!------------- header bar ------------------->	
+<!------------- header bar ------------------>	
     <div class="header-bar">
         <div class="header-option">
             <a href="Entry.php">Home</a>
@@ -18,7 +18,7 @@ include('session1.php');
 				<input name="logout" type="button" id="logout" value="logout" onclick="window.location='logout1.php'" >
 		</div>	
     </div>
-        <script src="http://localhost/php/newtask/search_by_date.js"></script>
+        <script src="http://localhost/task/completed/search_by_date.js"></script>
 
 <?php 
 $data['date']=$data['members']=$data['items']=$data['paid']=$data['amount']=$data['per_head']=""; 
@@ -28,7 +28,7 @@ $data['date']=$data['members']=$data['items']=$data['paid']=$data['amount']=$dat
 <form class="payment" method="POST" action="" onSubmit="return validate()">  
     <fieldset>
          <legend><h3>payment screen</h3></legend> 
-<!----------------- search data by date and member selected ----------------->
+<!----------------- search data by date and member selected ---------------->
 <table>
     <tr>
         <td>Date:</td>
@@ -40,8 +40,8 @@ $data['date']=$data['members']=$data['items']=$data['paid']=$data['amount']=$dat
         <td><select name="member" id="mSelect">
                 <option></option>
     <?php
-                $conn = mysqli_connect('localhost','root','','test');
-                mysqli_select_db($conn,"test");
+                $conn = mysqli_connect('localhost','root','mysql','mysql');
+                mysqli_select_db($conn,"mysql");
 
 				$edit = "SELECT User FROM selected_members ";				
 					

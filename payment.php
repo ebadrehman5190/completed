@@ -5,8 +5,8 @@
 <head>
     <title>Payment</title>
     <link rel="stylesheet" href="payment.css">
-    <script src="http://localhost/php/newtask/payment_validation.js"></script>
-    <script src="http://localhost/php/newtask/payment_validation2.js"></script>
+    <script src="http://localhost/task/completed/payment_validation.js"></script>
+    <script src="http://localhost/task/completed/payment_validation2.js"></script>
 </head>
 <body>
     <div class="header-bar">
@@ -18,14 +18,10 @@
 		</div>	
     </div>
 
-<?php
-$_POST['date'] = $_POST['mpaid'] = $_POST['member'] = "";
-?>    
-
-<!------------------------------ sql quries to get amount --------------------------------------->
+<!-- sql quries to get amount -->
 <?php include('payment2.php'); ?>
 
-<!--------------------------------------Table of fetch amount---------------------------------------->
+<!-- Table of fetch amount -->
     <div class="member-detail">
         <form class="selected-member" method="POST" action="" >
             <fieldset style="height:80px;">
@@ -62,7 +58,7 @@ $_POST['date'] = $_POST['mpaid'] = $_POST['member'] = "";
             </fieldset>
             </form>
         </div>  
-<!--------------------------------- Submit amount  ----------------------------------------------->         
+<!-- Submit amount -->         
     <div class="payment-div">
         <form class="payment" action="" method="POST" >
             <fieldset>
@@ -96,14 +92,15 @@ $_POST['date'] = $_POST['mpaid'] = $_POST['member'] = "";
                         </tr>    
                         <tr>
                             <td></td>
-<!--submit button of insert data-->
+<!-- submit button of insert data -->
                             <td><input type="submit" name="submit_data" value="paid" onclick="return validate()" style="width:80px;"></td>
                         </tr>
                     </table>
             </fieldset>
-<!------------------------------ sql quries to insert amount ---------------------------------------->
+<br>            
+<!-- sql quries to insert amount -->
 <?php include('payment1.php'); ?>
-
+            
 </form>
 </div>     
 </body>

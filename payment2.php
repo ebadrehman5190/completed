@@ -1,6 +1,6 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','test');
-            mysqli_select_db($conn,"test");
+    $conn = mysqli_connect('localhost','root','mysql','mysql');
+            mysqli_select_db($conn,"mysql");
             
     if(!empty($_POST['select_member'])){
             

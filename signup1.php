@@ -4,8 +4,8 @@
 		
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
-		$dbname = "test";
+		$password = "mysql";
+		$dbname = "mysql";
 
 				// Create connection
 				$conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +15,7 @@
 				} 
 
 				//$select = mysqli_select_db('test');
-				mysqli_select_db($conn,"test");
+				mysqli_select_db($conn,"mysql");
 				$new = "INSERT INTO selected_members (User, Member_name, Email, Password, Gender, Admin)
 				VALUES ('".$_POST['user']."','".$_POST['name']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['gender']."', '".$_POST['admin']."')";
 

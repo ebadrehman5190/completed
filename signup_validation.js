@@ -60,7 +60,7 @@
 			    }
                 
                 
-                if(validate == false){
+                if(validate === false){
                     return(false);
                 }else{
                     return(true);

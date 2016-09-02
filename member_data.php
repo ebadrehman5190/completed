@@ -24,8 +24,8 @@ include('session1.php');
 	<form action='#' method="post">
 		
 		<?php				
-				$conn = mysqli_connect('localhost','root','','test');
-				mysqli_select_db($conn,"test");
+				$conn = mysqli_connect('localhost','root','mysql','mysql');
+				mysqli_select_db($conn,"mysql");
 
 				$query = "SELECT date,members,items,paid,amount,per_head FROM lunch_system WHERE members LIKE '%".$_SESSION['login_user']."%'";
 					

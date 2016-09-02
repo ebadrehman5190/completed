@@ -3,8 +3,8 @@
                     
                 $servername = "localhost";
                 $username = "root";
-                $password = "";
-                $dbname = "test";
+                $password = "mysql";
+                $dbname = "mysql";
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -36,7 +36,7 @@
                         }
                     } 
                 }                                    
-                    $new = "INSERT INTO Lunch_system (date, members, items, paid, amount, per_head)
+                    $new = "INSERT INTO Lunch_system ( date, members, items, paid, amount, per_head)
                             VALUES ('".$_POST['date']."', '".$select."', '".$items."', '".$_POST['paid']."', '".$_POST['amount']."', '".$_POST['per_head']."' )";
                     
                     if ($conn->query($new) === TRUE) {

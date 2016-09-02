@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="history.css">
 </head>
 <body>
-<!------------- header bar ------------------->	
+<!------------- header bar ------------------>	
 	<div class="header-bar">
 		<div class="header-option">
 			<div class="home">
@@ -21,8 +21,8 @@
 <br>    
 <form action='#' method="post">
 <?php		
-		$conn = mysqli_connect('localhost','root','','test');
-		mysqli_select_db($conn,"test");
+		$conn = mysqli_connect('localhost','root','mysql','mysql');
+		mysqli_select_db($conn,"mysql");
 
 		$query = "SELECT date,members,items,paid,amount,per_head FROM Lunch_system ";
 		$amount = "SELECT SUM(amount),SUM(per_head) FROM Lunch_system ";
